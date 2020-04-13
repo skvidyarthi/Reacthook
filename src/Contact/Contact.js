@@ -4,7 +4,7 @@ const Contacts=({contacts})=>{
     const ref1=useRef();
     return(
         <div>
-        <center><h1>Contact List</h1></center>
+        <center><h1 className="header">Contact List</h1></center>
         {contacts.map((contact)=>(
             <div className="card">
             <div className="card-body">

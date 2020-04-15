@@ -20,7 +20,7 @@ class CityData extends Component{
         const {CountryData} = this.state
         return(
             <div>
-            <center><h1 className="header">Cities Lists</h1></center>
+            <center><h1 className="header">Cities Lists Api(Class Component)</h1></center>
             {CountryData.map((country)=>(
                 <div className="card">
                 <div className="card-body">

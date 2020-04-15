@@ -17,7 +17,7 @@ function AllPosts(){
 
   return(
     <div>
-    <center><h1 className="header">Current Posts</h1></center>
+    <center><h1 className="header"> All Current Posts(React Hook)</h1></center>
     {posts.map((post)=>(
         <div className="card">
         <div className="card-body">

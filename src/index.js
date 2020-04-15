@@ -7,8 +7,9 @@ import * as serviceWorker from './serviceWorker';
 import Employee from './Employee';
 import AllPosts from './Posts/AllPosts';
 import CityData from './City/CityData';
+import Covid19 from './Covid19/CovidData';
 
-ReactDOM.render(<div><Employee />,<CityData/></div>, document.getElementById('root'));
+ReactDOM.render(<div><AllPosts />,<CityData/></div>,document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

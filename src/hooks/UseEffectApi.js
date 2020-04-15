@@ -2,9 +2,11 @@ import React from 'react';
 import Contacts from '../Contact/Contact';
 import {useState, useEffect} from "react";
 
+
 const UseEffectApi =() =>{  
     const [dishes, setDishes] = useState([]);
     const [info, setInfo] =useState([]);
+    
 
     const fetchDishes= async (props) =>{
         const res= await fetch("https://my-json-server.typicode.com/leveluptuts/fakeapi/dishes");
@@ -18,9 +20,12 @@ const UseEffectApi =() =>{
       setInfo(infoData);
     }
 
+   
+
     useEffect(()=>{
         fetchDishes();
         fetchInfo();
+        
     }, []);
 
     return (      
@@ -38,11 +43,8 @@ const UseEffectApi =() =>{
               </article>
             ))}  
             <Contacts contacts={info}/>
-                         
-        
-        </div>
-
-        
+                                  
+         </div>        
     );
 
 }

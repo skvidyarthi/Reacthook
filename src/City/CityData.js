@@ -22,7 +22,7 @@ class CityData extends Component{
             <div>
             <center><h1 className="header">Cities Lists Api(Class Component)</h1></center>
             {CountryData.map((country)=>(
-                <div className="card">
+                <div className="container card col-lg-6">
                 <div className="card-body">
                   <h5 className="card-title" >{country.City}</h5>
                   <h6 className="card-subtitle mb-2 text-muted" >{country.State}</h6>

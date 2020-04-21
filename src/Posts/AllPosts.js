@@ -1,10 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import CityData from '../City/CityData';
+
+function Wait({delay=1000, placeholder, ui}){
+const [show, setShow]= useState(false);
+
+useEffect(()=>{
+const id=setTimeout(()=>{
+  setShow(true)
+}, delay)
+return ()=>window.clearTimeout(id)
+}, [delay])
+
+return show ===true? ui : placeholder 
+}
 
 function AllPosts(){
   const [posts, setPost]=useState([]);
+  const [input, setInput] = useState('');
 
-  useEffect(()=>{
+useEffect(()=>{
+document.title=`${24-input.length} characters remain`;
+  }, [input])
+
+useEffect(()=>{
          axios.get('https://jsonplaceholder.typicode.com/posts')
          .then(res=>{
            console.log(res)
@@ -17,9 +36,13 @@ function AllPosts(){
 
   return(
     <div>
+   
     <center><h1 className="header"> All Current Posts(React Hook)</h1></center>
+    <textarea type="text" value={input} placeholder="type please" onChange={(e)=>setInput(e.target.value)} />
+    <button disabled={input.length===0 || input.length > 24} onClick={()=>console.log(input)}>Submit</button>
+    <div className="charcter"></div>
     {posts.map((post)=>(
-        <div className="card">
+        <div className="container card col-lg-6">
         <div className="card-body">
           <h5 className="card-title" key={post.id}>{post.id}</h5>
           <h6 className="card-subtitle mb-2 text-muted" >{post.title}</h6>
@@ -28,9 +51,9 @@ function AllPosts(){
       </div>
     )
     )}
+
+    <Wait delay={3000} placeholder={<p>Wating...</p>} ui={<CityData/>} />
     </div>
 )
-
 }
-  
-  export default AllPosts;
+export default AllPosts;

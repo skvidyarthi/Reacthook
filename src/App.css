@@ -36,3 +36,6 @@
     transform: rotate(360deg);
   }
 }
+
+.currentnews a{text-decoration:none; color:blue}
+.currentnews img{width:200px; height:200px; display:block}

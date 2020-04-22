@@ -2,6 +2,25 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import CityData from '../City/CityData';
 
+function useWindowDiemention(){
+  const [width, setWidth] = useState(window.innerWidth);
+  const [height, setHeight] = useState(window.innerHeight);
+
+  useEffect(()=>{
+    const listner=()=>{
+      setWidth(window.innerWidth)
+      setHeight(window.innerHeight)
+    }
+
+    window.addEventListener("resize", listner)
+  })
+
+  return {
+    width,
+    height
+  }
+}
+
 function Wait({delay=1000, placeholder, ui}){
 const [show, setShow]= useState(false);
 
@@ -34,9 +53,13 @@ useEffect(()=>{
         })
   }, []);
 
+  const { width, height } = useWindowDiemention();
+
   return(
     <div>
-   
+   <h2>Width:{width}</h2>
+   <h2>Height:{height}</h2>
+   <p>Resize the window</p>
     <center><h1 className="header"> All Current Posts(React Hook)</h1></center>
     <textarea type="text" value={input} placeholder="type please" onChange={(e)=>setInput(e.target.value)} />
     <button disabled={input.length===0 || input.length > 24} onClick={()=>console.log(input)}>Submit</button>

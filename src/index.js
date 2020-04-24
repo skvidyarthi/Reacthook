@@ -9,10 +9,10 @@ import AllPosts from './Posts/AllPosts';
 import CityData from './City/CityData';
 import CurrentNews from './News/CurrentNews';
 import Fetchposts from './hooks/Fetchposts'
-
 import Covid19 from './Covid19/CovidData';
+import UserDetailsComponent from './Context/UserDetailsComponent';
 
-ReactDOM.render(<div><CurrentNews/></div>,document.getElementById('root'));
+ReactDOM.render(<div><UserDetailsComponent /></div>,document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

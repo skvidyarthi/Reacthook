@@ -1,9 +1,20 @@
 import React from 'react';
+import styled from 'styled-components'
+
+const Title = styled.h1`
+  font-size: 1.5em;
+  text-align: center;
+  color: White;
+`
+
+const Wrapper=styled.section`
+padding:2rem;
+background:blue;
+`
 
 export default class CurrentNews extends React.Component{
     constructor(props){
         super(props);
-
         this.state={
             newsData:[]
         }
@@ -22,8 +33,9 @@ export default class CurrentNews extends React.Component{
     render(){
         const {newsData}= this.state
         return(
+          <Wrapper>
             <div>
-            <center><h1 className="header">World Latest Feed</h1></center>
+            <Title>{'Latest World News '}</Title>
             {newsData.map((news)=>(
                 <div className="container card col-lg-6">
                 <div className="card-body currentnews">
@@ -42,6 +54,7 @@ export default class CurrentNews extends React.Component{
             )
             )}
             </div>
+            </Wrapper>
         )
     }
 }

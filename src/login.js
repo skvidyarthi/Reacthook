@@ -11,6 +11,8 @@ class Login extends Component {
     }
 this.handleUserChange = this.handleUserChange.bind(this);
 this.handleSubmit = this.handleSubmit.bind(this);
+this.handlePassChange = this.handlePassChange.bind(this);
+this.dismissError = this.dismissError.bind(this);
 }
 
 
@@ -41,11 +43,22 @@ handleSubmit(evt) {
         });
       }
 
+      dismissError() {
+        this.setState({ error: '' });
+      }
+
 render() {
     return (    
         
             <div className=" container Login">
               <Form onSubmit={this.handleSubmit}>
+              {
+                this.state.error &&
+                <h3 data-test="error" onClick={this.dismissError}>
+                  <button onClick={this.dismissError}>✖</button>
+                  {this.state.error}
+                </h3>
+              }
               <FormGroup>
                 <label>User Name</label>
                 <input type="text" data-test="username" value={this.state.username} onChange={this.handleUserChange} />

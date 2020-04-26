@@ -5,8 +5,6 @@ var userDetailContext = React.createContext(null);
 export default function UserDetailsComponent() {
  const [userDetails, setDetails]=useState({name:"Ashish", age:30})
 
- 
-
   return (
     <userDetailContext.Provider value={userDetails}>
     <div className="container">

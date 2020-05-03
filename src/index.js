@@ -9,7 +9,7 @@ import AllPosts from './Posts/AllPosts';
 import CityData from './City/CityData';
 import CurrentNews from './News/CurrentNews';
 
-import Covid19 from './Covid19/CovidData';
+
 
 ReactDOM.render(<div><CurrentNews /></div>,document.getElementById('root'));
 

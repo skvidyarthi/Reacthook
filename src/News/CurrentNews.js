@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 
 export default class CurrentNews extends React.Component{
     constructor(props){
@@ -23,6 +24,7 @@ export default class CurrentNews extends React.Component{
         const {newsData}= this.state
         return(
             <div>
+            
             <center><h1 className="header">World Latest Feed</h1></center>
             {newsData.map((news)=>(
                 <div className="container card col-lg-6">

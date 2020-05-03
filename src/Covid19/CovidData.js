@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-class Covid19 extends Component{
+class CovidData extends Component{
  constructor(props){
      super(props)
     this.state={
@@ -38,6 +38,6 @@ class Covid19 extends Component{
     }
 }
 
-export default Covid19
+export default CovidData
 
 

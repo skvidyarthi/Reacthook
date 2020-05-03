@@ -1,10 +1,24 @@
 import React from 'react';
+<<<<<<< HEAD
 import ReactDOM from 'react-dom';
+=======
+import styled from 'styled-components'
+
+const Title = styled.h1`
+  font-size: 1.5em;
+  text-align: center;
+  color: White;
+`
+
+const Wrapper=styled.section`
+padding:2rem;
+background:blue;
+`
+>>>>>>> 359284f92085914ed9f8bfb650ffa50f3d3494de
 
 export default class CurrentNews extends React.Component{
     constructor(props){
         super(props);
-
         this.state={
             newsData:[]
         }
@@ -23,9 +37,14 @@ export default class CurrentNews extends React.Component{
     render(){
         const {newsData}= this.state
         return(
+          <Wrapper>
             <div>
+<<<<<<< HEAD
             
             <center><h1 className="header">World Latest Feed</h1></center>
+=======
+            <Title>{'Latest World News '}</Title>
+>>>>>>> 359284f92085914ed9f8bfb650ffa50f3d3494de
             {newsData.map((news)=>(
                 <div className="container card col-lg-6">
                 <div className="card-body currentnews">
@@ -44,6 +63,7 @@ export default class CurrentNews extends React.Component{
             )
             )}
             </div>
+            </Wrapper>
         )
     }
 }
